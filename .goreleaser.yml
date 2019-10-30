@@ -1,0 +1,39 @@
+project_name: d42cli
+builds:
+- goos:
+  - linux
+  - darwin
+  - windows
+  goarch:
+  - amd64
+  main: .
+  ldflags: -s -w -X main.version={{.Version}} -X main.commit={{.Commit}} -X main.date={{.Date}}
+  binary: d42cli
+archive:
+  format: tar.gz
+  name_template: '{{ .ProjectName }}_{{ .Version }}_{{ .Os }}_{{ .Arch }}{{ if .Arm
+    }}v{{ .Arm }}{{ end }}'
+  files:
+  - licence*
+  - LICENCE*
+  - license*
+  - LICENSE*
+  - readme*
+  - README*
+  - changelog*
+  - CHANGELOG*
+  - d42cli*
+fpm:
+  vendor: Apptio TechOps
+  homepage: "https://github.com/apptio/d42cli"
+  maintainer: Jess Belliveau <jbelliveau@apptio.com>
+  description: "Query the Device42 API via the cli."
+  license: MIT
+  formats:
+    - rpm
+    - deb
+  bindir: /usr/local/bin
+snapshot:
+  name_template: SNAPSHOT-{{ .Commit }}
+dist: dist
+
