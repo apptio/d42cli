@@ -4,10 +4,9 @@ d42cli is a simple tool to interact with the Device42 API.
 
 ## Configuration
 
-Configuration is in the form of a yaml file in the users homedir:
-.d42cli.yaml
+Configuration is in the form of a yaml file in the users homedir - ".d42cli.yaml"
 
-Contents should be:
+The contents of the users config file should be as follows:
 ```
 {
     "Username": "USERNAME",
