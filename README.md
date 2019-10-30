@@ -4,17 +4,43 @@ d42cli is a simple tool to interact with the Device42 API.
 
 ## Configuration
 
-Configuration is in the form of a yaml file in the users homedir.
-* .d42cli.yaml
+Configuration is in the form of a yaml file in the users homedir:
+.d42cli.yaml
 
 Contents should be:
+```
 {
     "Username": "USERNAME",
     "Password": "PASSWORD",
     "BaseURL": "https://device42.base.url/api/1.0/"
 }
+```
 
 **Output**
+
+```
+This tool is designed to help interact with the Device42 CMDB appliance.
+This binary interacts with your Device42 appliance via the 1.0 API.
+
+Examples;
+to retrieve a device entry called servername3:
+d42cli get device servername3
+
+Usage:
+  d42cli [command]
+
+Available Commands:
+  delete      Delete an entry from Device42
+  get         Retrieve an entry from Device42
+  help        Help about any command
+
+Flags:
+      --config string   config file (default is $HOME/.d42cli.yaml)
+  -h, --help            help for d42cli
+  -t, --toggle          Help message for toggle
+
+Use "d42cli [command] --help" for more information about a command.
+```
 
 Here is an example of getting a device by name and using `jq` to process the results:
 ```
